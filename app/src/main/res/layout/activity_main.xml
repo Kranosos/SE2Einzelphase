@@ -30,6 +30,28 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/number_input"
         android:layout_marginTop="20dp"
-        android:text="Senden" />
+        android:text="Senden"
+        android:onClick="sendMatrikelnummer"/>
+
+    <TextView
+        android:id="@+id/text_field_server"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/send_button"
+        android:text="Antwort vom Server:"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/output"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_field_server"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:singleLine="false"
+        android:inputType="textPersonName"
+        android:textSize="20dp"
+        android:text="" />
 
 </RelativeLayout>
