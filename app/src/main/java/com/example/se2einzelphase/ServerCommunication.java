@@ -11,14 +11,12 @@ public class ServerCommunication implements Runnable{
     String host;
     int port;
     String message;
-    boolean gotResponse;
     String response;
 
     public ServerCommunication(String host, int port, String message) {
         this.host = host;
         this.port = port;
         this.message = message;
-        gotResponse = false;
     }
 
     @Override
@@ -32,14 +30,11 @@ public class ServerCommunication implements Runnable{
 
             BufferedReader inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             response = inFromServer.readLine();
-            gotResponse = true;
             inFromServer.close();
             outToServer.close();
             clientSocket.close();
 
-        } catch (RuntimeException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (RuntimeException | IOException e) {
             e.printStackTrace();
         }
 
